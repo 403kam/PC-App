@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.droidcafeinput.MainActivity">
+    <item
+        android:id="@+id/meetingsicreated"
+        android:orderInCategory="30"
+        android:title="@string/meetingsicreated"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/allmeetings"
+        android:orderInCategory="40"
+        android:title="@string/allmeetings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="50"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        android:title="@string/logout"
+        app:showAsAction="never" />
+</menu>
