@@ -6,18 +6,19 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-public class Create extends AppCompatActivity{
+
+public class Register extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.create);
+        setContentView(R.layout.register);
 
 
-        Button createButton = findViewById(R.id.CreateEventbutton);
-        createButton.setOnClickListener(new View.OnClickListener() {
+        Button registerButton = findViewById(R.id.registerButton);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent6 = new Intent(Create.this,
-                        Display.class);
+                Intent intent6 = new Intent(Register.this,
+                        MainActivity.class);
                 startActivity(intent6);
             }
         });

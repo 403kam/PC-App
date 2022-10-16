@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Create Event"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editMeetingName"
+        android:layout_width="333dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_create" />
+
+    <TextView
+        android:id="@+id/label_MeetingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Title:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editMeetingName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editMeetingDescription"
+        android:layout_width="326dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_MeetingDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editMeetingName" />
+
+    <TextView
+        android:id="@+id/label_MeetingDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Description:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editMeetingDescription"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editStreetAddress"
+        android:layout_width="302dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_StreetAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editMeetingDescription" />
+
+    <TextView
+        android:id="@+id/label_StreetAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Street Address:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editStreetAddress"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editCity"
+        android:layout_width="366dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_City"
+        app:layout_constraintTop_toBottomOf="@+id/editStreetAddress" />
+    <TextView
+        android:id="@+id/label_City"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="City:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editCity"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editZip"
+        android:layout_width="345dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_Zip"
+        app:layout_constraintTop_toBottomOf="@+id/editCity" />
+
+    <TextView
+        android:id="@+id/label_Zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Zip Code:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editZip"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editMaxParticipants"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="14"
+        android:inputType="text|number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_MaxParticipants"
+        app:layout_constraintTop_toBottomOf="@+id/editZip"
+        android:layout_width="wrap_content"/>
+
+    <TextView
+        android:id="@+id/label_MaxParticipants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Max Participants:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editMaxParticipants"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/CreateEventbutton"
+        android:layout_width="230dp"
+        android:layout_height="65dp"
+        android:text="Create Event"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editMaxParticipants" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
