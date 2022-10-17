@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 //import android.support.v7.app.AppCompatActivity;
-//Login menu and startup on app!
+//Login menu and startup on app! Note: If logged in then dont worry?
 
 public class MainActivity extends AppCompatActivity {
 
