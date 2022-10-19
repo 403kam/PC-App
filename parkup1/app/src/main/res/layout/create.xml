@@ -10,21 +10,22 @@
         android:id="@+id/text_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="Create Event"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editMeetingName"
         android:layout_width="333dp"
         android:layout_height="38dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textShortMessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_create" />
 
@@ -41,10 +42,11 @@
         android:id="@+id/editMeetingDescription"
         android:layout_width="326dp"
         android:layout_height="37dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textShortMessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/label_MeetingDescription"
         app:layout_constraintTop_toBottomOf="@+id/editMeetingName" />
 
@@ -58,15 +60,57 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
+        android:id="@+id/editMeetingDate"
+        android:layout_width="326dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toEndOf="@+id/label_MeetingDate"
+        app:layout_constraintTop_toBottomOf="@+id/editMeetingDescription" />
+
+    <TextView
+        android:id="@+id/label_MeetingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Date:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editMeetingDate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editMeetingTime"
+        android:layout_width="326dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textShortMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_MeetingTime"
+        app:layout_constraintTop_toBottomOf="@+id/editMeetingDate" />
+
+    <TextView
+        android:id="@+id/label_MeetingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Time:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editMeetingTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
         android:id="@+id/editStreetAddress"
         android:layout_width="302dp"
         android:layout_height="44dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/label_StreetAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editMeetingDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/editMeetingTime" />
 
     <TextView
         android:id="@+id/label_StreetAddress"
@@ -81,12 +125,13 @@
         android:id="@+id/editCity"
         android:layout_width="366dp"
         android:layout_height="42dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/label_City"
         app:layout_constraintTop_toBottomOf="@+id/editStreetAddress" />
+
     <TextView
         android:id="@+id/label_City"
         android:layout_width="wrap_content"
@@ -100,10 +145,11 @@
         android:id="@+id/editZip"
         android:layout_width="345dp"
         android:layout_height="37dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/label_Zip"
         app:layout_constraintTop_toBottomOf="@+id/editCity" />
 
@@ -118,14 +164,15 @@
 
     <EditText
         android:id="@+id/editMaxParticipants"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:ems="14"
         android:inputType="text|number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/label_MaxParticipants"
-        app:layout_constraintTop_toBottomOf="@+id/editZip"
-        android:layout_width="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@+id/editZip" />
 
     <TextView
         android:id="@+id/label_MaxParticipants"
@@ -143,7 +190,9 @@
         android:text="Create Event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMaxParticipants" />
+        app:layout_constraintTop_toBottomOf="@+id/editMaxParticipants"
+        app:layout_constraintVertical_bias="0.235" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
