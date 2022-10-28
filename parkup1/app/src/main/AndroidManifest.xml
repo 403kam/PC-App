@@ -41,6 +41,11 @@
             android:exported="true"
             android:parentActivityName=".Display" >
         </activity>
+        <activity
+            android:name=".Create"
+            android:exported="true"
+            android:parentActivityName=".Display" >
+        </activity>
 
     </application>
 
