@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "809012249696",
+    "firebase_url": "https://pc-app-c9b34-default-rtdb.firebaseio.com",
+    "project_id": "pc-app-c9b34",
+    "storage_bucket": "pc-app-c9b34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809012249696:android:a03cb3a6f77dfae4362f05",
+        "android_client_info": {
+          "package_name": "com.example.parkup1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809012249696-sda4nilb82cbtehlqbok1254q4i356kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8jPF1BNHp1yXRzwJgadTyxQylVHET87U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809012249696-sda4nilb82cbtehlqbok1254q4i356kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
