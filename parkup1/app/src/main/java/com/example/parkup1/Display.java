@@ -23,7 +23,18 @@ import android.widget.TextView;
 //import android.view.View;
 //import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 public class Display extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    eventAdapter adapter; // Create Object of the Adapter class
+    DatabaseReference mbase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +63,25 @@ public class Display extends AppCompatActivity {
             }
         });
         */
+        mbase = FirebaseDatabase.getInstance().getReference("events");
 
+        recyclerView = findViewById(R.id.recyclermain);
+
+        // To display the Recycler view linearly
+        recyclerView.setLayoutManager(
+                new LinearLayoutManager(this));
+
+        // It is a class provide by the FirebaseUI to make a
+        // query in the database to fetch appropriate data
+        FirebaseRecyclerOptions<event> options
+                = new FirebaseRecyclerOptions.Builder<event>()
+                .setQuery(mbase, event.class)
+                .build();
+        // Connecting object of required Adapter class to
+        // the Adapter class itself
+        adapter = new eventAdapter(options);
+        // Connecting Adapter class with the Recycler view*/
+        recyclerView.setAdapter(adapter);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +91,20 @@ public class Display extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    // Function to tell the app to start getting
+    // data from database on starting of the activity
+    @Override protected void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override protected void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
     }
 
     /**
