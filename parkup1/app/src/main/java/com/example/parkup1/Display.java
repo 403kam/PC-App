@@ -23,7 +23,17 @@ import android.widget.TextView;
 //import android.view.View;
 //import android.widget.Toast;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 public class Display extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    eventAdapter adapter;
+    DatabaseReference mbase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +62,16 @@ public class Display extends AppCompatActivity {
             }
         });
         */
+        mbase = FirebaseDatabase.getInstance().getReference("events");
+        recyclerView = findViewById(R.id.recyclermain);
+        recyclerView.setLayoutManager(
+                new LinearLayoutManager(this));
+        FirebaseRecyclerOptions<event> options
+                = new FirebaseRecyclerOptions.Builder<event>()
+                .setQuery(mbase, event.class)
+                .build();
+        adapter = new eventAdapter(options);
+        recyclerView.setAdapter(adapter);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +82,22 @@ public class Display extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    // Function to tell the app to start getting
+    // data from database on starting of the activity
+    @Override protected void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    // Function to tell the app to stop getting
+    // data from database on stopping of the activity
+    @Override protected void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
     }
 
     /**

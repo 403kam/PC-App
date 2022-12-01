@@ -42,6 +42,15 @@
 
     <!-- <include layout="@layout/content_main" /> -->
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclermain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -56,7 +65,7 @@
     <!-- app:layout_constraintStart_toStartOf="@+id/appBarLayout"
     app:layout_constraintTop_toTopOf="@+id/appBarLayout" -->
        <!-- app:srcCompat="@drawable/ic_shopping_cart" /> -->
-
+<!--
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,5 +93,5 @@
                 tools:ignore="Suspicious0dp" />
         </LinearLayout>
     </ScrollView>
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
