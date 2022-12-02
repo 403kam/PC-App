@@ -58,14 +58,9 @@ public class Register extends AppCompatActivity {
                                     Log.d("debug", "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
 
-
-                                    FirebaseDatabase rootnode;
-                                    DatabaseReference reference;
-                                    rootnode = FirebaseDatabase.getInstance();
-                                    reference = rootnode.getReference("users");
-
+                                    DatabaseReference mbase = FirebaseDatabase.getInstance().getReference();
                                     userHelper helper = new userHelper(registerName,registeremail,confirmEmail,registerpassword,confirmPassword);
-                                    reference.child(registerName).setValue(helper);
+                                    mbase.child("users").child(registerName).setValue(helper);
 
                                     Intent intent6 = new Intent(Register.this, MainActivity.class);
                                     startActivity(intent6);

@@ -20,15 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class Create extends AppCompatActivity{
-    private FirebaseAuth mAuth;
-    FirebaseDatabase database = FirebaseDatabase.getInstance("http://pc-app-c9b34-default-rtdb.firebaseio.com");
-    private DatabaseReference mDatabase= FirebaseDatabase.getInstance("http://pc-app-c9b34-default-rtdb.firebaseio.com").getReference();
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        mAuth = FirebaseAuth.getInstance();
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create);
 
@@ -59,24 +52,12 @@ public class Create extends AppCompatActivity{
                 EditText editMaxParticipants = (EditText) findViewById(R.id.editMaxParticipants);
                 String maxparticipants = editMaxParticipants.getText().toString();
 
-                FirebaseUser currentUser = mAuth.getCurrentUser();
-                String creator = "sam";//currentUser.getDisplayName();
-                Integer id = 3;
+                String creator = "sam"; // need to be able to get current user
+                Integer id = 3; // need to get last entered event id number
+
+                DatabaseReference mbase = FirebaseDatabase.getInstance().getReference();
                 event Newevent = new event(title, description, date,  time, streetaddress, city, zipcode, maxparticipants, creator, id) {};
-
-                //mDatabase.child("events").child(Newevent.getId().toString()).push().setValue(Newevent);
-
-                 mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent);
-
-               /* mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getDescription());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getDate());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getTime());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getStreetaddress());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getCity());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getZipcode());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getMaxparticipants());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getCreator());
-                mDatabase.child("events").child(Newevent.getId().toString()).setValue(Newevent.getId());*/
+                mbase.child("users").child(id.toString()).setValue(Newevent);
                 Intent intent6 = new Intent(Create.this,
                         Display.class);
                 startActivity(intent6);
